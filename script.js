@@ -1,5 +1,5 @@
-var puck_x = 210;
-var puck_y = 210;
+var puck_x = 360;
+var puck_y = 310;
 var speed = 50;
 
 document.getElementById('puck').style.top = puck_y+'px';
@@ -11,21 +11,27 @@ function logCoordinates() {
 function checkCollision() {
     if (puck_x > 250 && puck_x < 350 && puck_y < 220 && puck_y > 150) {
         document.getElementById('gap').style.backgroundColor = "red";
+        document.getElementById('puck').style.height = "20px";
+        document.getElementById('puck').style.width = "20px";
     }
     else {
         document.getElementById('gap').style.backgroundColor = "white";
     }
-
 }
 
 function biggerPuck() {
-    if (puck_x == 410 && puck_y == 310) {
-        console.log("collision.detected");
+    if (puck_x == 260 && puck_y == 60) {
+        document.getElementById('puck').style.height = "30px";
+        document.getElementById('puck').style.width = "30px";
+        
     }
 }
 
 function smallerPuck() {
-    console.log("small")
+    if (puck_x == 410 && puck_y == 310) {
+        document.getElementById('puck').style.height = "15px";
+        document.getElementById('puck').style.width = "15px";
+    }
 }
 
 document.getElementById('right').addEventListener('click', function() {
@@ -33,6 +39,8 @@ document.getElementById('right').addEventListener('click', function() {
     document.getElementById('puck').style.left = puck_x+'px';
     logCoordinates();
     checkCollision();
+    biggerPuck();
+    smallerPuck();
     
 });
 
@@ -41,6 +49,8 @@ document.getElementById('left').addEventListener('click', function() {
     document.getElementById('puck').style.left = puck_x+'px';
     logCoordinates();
     checkCollision();
+    biggerPuck();
+    smallerPuck();
 });
 
 document.getElementById('up').addEventListener('click', function() {
@@ -48,6 +58,8 @@ document.getElementById('up').addEventListener('click', function() {
     document.getElementById('puck').style.top = puck_y+'px';
     logCoordinates();
     checkCollision();
+    biggerPuck();
+    smallerPuck();
 });
 
 document.getElementById('down').addEventListener('click', function() {
@@ -55,6 +67,8 @@ document.getElementById('down').addEventListener('click', function() {
     document.getElementById('puck').style.top = puck_y+'px';
     logCoordinates();
     checkCollision();
+    biggerPuck();
+    smallerPuck();
 });
 
 
