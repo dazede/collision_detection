@@ -23,7 +23,13 @@ function biggerPuck() {
     if (puck_x == 260 && puck_y == 60) {
         document.getElementById('puck').style.height = "30px";
         document.getElementById('puck').style.width = "30px";
-        
+    }
+}
+
+function coinDisappear() {
+    if (puck_x == 260 && puck_y == 60) {
+        document.getElementById('coin').style.height = "200px";
+        document.getElementById('coin').style.width = "200px";
     }
 }
 
@@ -34,12 +40,30 @@ function smallerPuck() {
     }
 }
 
-function arenaBorder() {
-    if (puck_x > 560 || puck_x < 10 || puck_y < 10 || puck_y > 360) {
-       document.getElementById('puck').style.backgroundColor = "red"
-       }
+function upperBorder() {
+    if (puck_y < 60 ) {
+        puck_y = 60
+    }
+}
+
+function lowerBorder() {
+    if (puck_y < 60 ) {
+        puck_y = 60
+    }
+}
+    
+function leftBorder() {
+    if (puck_x < 60 ) {
+        puck_x = 60
+    }
+}
+
+function rightBorder() {
+    if (puck_x > 510) {
+        puck_x = 510
+    }
     else {
-        document.getElementById('puck').style.backgroundColor = "yellow"
+        puck_x < 560
     }
 }
 
@@ -50,7 +74,10 @@ document.getElementById('right').addEventListener('click', function() {
     checkCollision();
     biggerPuck();
     smallerPuck();
-    arenaBorder();
+    upperBorder();
+    lowerBorder();
+    leftBorder();
+    coinDisappear();
     
 });
 
@@ -61,7 +88,11 @@ document.getElementById('left').addEventListener('click', function() {
     checkCollision();
     biggerPuck();
     smallerPuck();
-    arenaBorder();
+    upperBorder();
+    lowerBorder();
+    leftBorder();
+    coinDisappear();
+    
 });
 
 document.getElementById('up').addEventListener('click', function() {
@@ -71,7 +102,11 @@ document.getElementById('up').addEventListener('click', function() {
     checkCollision();
     biggerPuck();
     smallerPuck();
-    arenaBorder();
+    upperBorder();
+    lowerBorder();
+    leftBorder();
+    coinDisappear();
+    
 });
 
 document.getElementById('down').addEventListener('click', function() {
@@ -81,7 +116,11 @@ document.getElementById('down').addEventListener('click', function() {
     checkCollision();
     biggerPuck();
     smallerPuck();
-    arenaBorder();
+    upperBorder();
+    lowerBorder();
+    leftBorder();
+    coinDisappear();
+    
 });
 
 
