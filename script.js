@@ -44,28 +44,19 @@ function upperBorder() {
     if (puck_y < 60 ) {
         puck_y = 60
     }
-}
-
-function lowerBorder() {
-    if (puck_y < 60 ) {
-        puck_y = 60
-    }
-}
-    
-function leftBorder() {
-    if (puck_x < 60 ) {
+    else if (puck_x < 60) {
         puck_x = 60
     }
-}
-
-function rightBorder() {
-    if (puck_x > 510) {
+    else if (puck_x > 510){
         puck_x = 510
     }
-    else {
-        puck_x < 560
+    else if (puck_y > 310) {
+        puck_y = 310
     }
 }
+
+
+
 
 document.getElementById('right').addEventListener('click', function() {
     puck_x += speed;
@@ -75,8 +66,6 @@ document.getElementById('right').addEventListener('click', function() {
     biggerPuck();
     smallerPuck();
     upperBorder();
-    lowerBorder();
-    leftBorder();
     coinDisappear();
     
 });
@@ -89,8 +78,6 @@ document.getElementById('left').addEventListener('click', function() {
     biggerPuck();
     smallerPuck();
     upperBorder();
-    lowerBorder();
-    leftBorder();
     coinDisappear();
     
 });
@@ -103,8 +90,6 @@ document.getElementById('up').addEventListener('click', function() {
     biggerPuck();
     smallerPuck();
     upperBorder();
-    lowerBorder();
-    leftBorder();
     coinDisappear();
     
 });
@@ -117,8 +102,6 @@ document.getElementById('down').addEventListener('click', function() {
     biggerPuck();
     smallerPuck();
     upperBorder();
-    lowerBorder();
-    leftBorder();
     coinDisappear();
     
 });
